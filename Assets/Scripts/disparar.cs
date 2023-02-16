@@ -19,7 +19,7 @@ public class disparar : MonoBehaviour
     void OnTriggerEnter(Collider co) {
         // Was it a Monster? Then Shoot it
         if (co.GetComponent<Enemy>()) {
-            //transform.Rotate(0,0,co.transform.position.z);
+            transform.LookAt(co.transform.position + new Vector3(0,30,0));
             GameObject g = (GameObject)Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             g.GetComponent<Bullet>().target = co.transform;
         }
