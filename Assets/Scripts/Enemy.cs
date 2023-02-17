@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,7 +11,7 @@ public class Enemy : MonoBehaviour
     
     void Start()
     {
-    GameObject egg = GameObject.Find("Egg");
+        GameObject egg = GameObject.Find("Egg");
         if (egg)
             GetComponent<NavMeshAgent>().destination = egg.transform.position;
     }
@@ -18,7 +19,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
+       
     }
     private void OnTriggerEnter(Collider other)
     {
