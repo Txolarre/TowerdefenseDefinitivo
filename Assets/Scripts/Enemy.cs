@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour
         if (other.name == "Egg")
         {
             other.GetComponentInChildren<HealthBar>().decrease();
+            Estatica.pollosVivos--;
+            Debug.Log("pollo huevo "+ Estatica.pollosVivos );                                                             
             Destroy(gameObject);
         }
     }

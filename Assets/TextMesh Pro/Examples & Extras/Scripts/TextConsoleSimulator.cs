@@ -12,6 +12,7 @@ namespace TMPro.Examples
         void Awake()
         {
             m_TextComponent = gameObject.GetComponent<TMP_Text>();
+            m_TextComponent.text = "Start";
         }
 
 

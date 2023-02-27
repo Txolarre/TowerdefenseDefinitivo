@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
     TextMesh tm;
-
+    private bool muerto = false;
     public ParticleSystem explosionPS;
 
     public AudioSource explosionAS;
@@ -32,12 +33,26 @@ public class HealthBar : MonoBehaviour
     public void decrease()
     {
         if (current() > 1)
+        {
             tm.text = tm.text.Remove(tm.text.Length - 1);
+        }
         else
         {
             explosionAS.Play();
             explosionPS.Play();
-            Destroy(transform.parent.gameObject,1);
+            if (transform.parent.gameObject.name == "Egg")
+            {
+                Estatica.gameOver = true;
+            }
+            else
+            {
+                if (!muerto)
+                {
+                    muerto = true;
+                    Estatica.pollosVivos--;
+                }
+            }
+            Destroy(transform.parent.gameObject, 1);
         }
     }
 }
