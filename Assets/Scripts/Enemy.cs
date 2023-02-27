@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
         {
             other.GetComponentInChildren<HealthBar>().decrease();
             Estatica.pollosVivos--;
-            Debug.Log("pollo huevo "+ Estatica.pollosVivos );                                                             
+            //Debug.Log("pollo huevo "+ Estatica.pollosVivos );                                                             
             Destroy(gameObject);
         }
     }
