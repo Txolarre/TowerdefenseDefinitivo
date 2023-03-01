@@ -9,12 +9,11 @@ public class Spawner2 : MonoBehaviour
     public TMP_Text txtEnemiesCount;
    
     private float tiempo1=0, tiempo2;
-    private int contPollos=Estatica.numPollos;
     // Start is called before the first frame update
     void Start()
     {
         //InvokeRepeating("SpawnNext", respawn, respawn);
-        txtEnemiesCount.text ="Atacantes por salir: "+Estatica.numPollos+ "/"+contPollos;
+        txtEnemiesCount.text ="Atacantes por salir: "+Estatica.numPollos;
     }
     void SpawnNext() {
         Instantiate(enemy, transform.position, Quaternion.identity);
@@ -28,7 +27,7 @@ public class Spawner2 : MonoBehaviour
             tiempo1 = tiempo2;
             SpawnNext();
             Estatica.numPollos--;
-            txtEnemiesCount.text="Atacantes por salir: "+Estatica.numPollos+ "/"+contPollos;
+            txtEnemiesCount.text="Atacantes por salir: "+Estatica.numPollos;
             //Estatica.pollosVivos++;
         }
     }
