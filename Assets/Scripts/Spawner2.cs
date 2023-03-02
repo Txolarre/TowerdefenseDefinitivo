@@ -28,6 +28,7 @@ public class Spawner2 : MonoBehaviour
             tiempo1 = tiempo2;
             SpawnNext();
             Estatica.numPollos--;
+            //
         }
     }
 }

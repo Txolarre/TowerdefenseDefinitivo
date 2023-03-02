@@ -9,7 +9,7 @@ public class Spawn : MonoBehaviour
     public GameObject enemy;
 
     private float tiempo1=0, tiempo2;
-    
+    //
     void Start()
     {
         //InvokeRepeating("SpawnNext", respawn, respawn);
